@@ -9,7 +9,7 @@ class TestCreditCardSmsParser < Minitest::Test
     # @hana_card = CreditCardSmsParser::HanaCard.new
   end
 
-  def test_hyundae_parse
+  def test_parse
     s = <<-eos
 [Web발신]
 [현대카드]-승인
@@ -17,17 +17,16 @@ class TestCreditCardSmsParser < Minitest::Test
 1,500원(일시불)
 마노핀익스프레스신림
 누적:354,220원
-eos
-    puts parse_sms('12222', s)
-  end
+    eos
+    puts "SHOP: #{parse_sms('111', s)[:SHOP]}"
 
-  def test_hana_parse
+
     s = <<-eos
 [Web발신]
 하나(6*8*)김*호님 04/06 15:26 씨유판교 일시불/3,500원/누적-4,645원
 eos
 
-    puts parse_sms('111', s)
+    puts "SHOP: #{parse_sms('111', s)[:SHOP]}"
 
     s = <<-eos
 [Web발신]
@@ -39,7 +38,7 @@ KB국민카드 2*5*
 누적 97,440원
 eos
 
-    puts parse_sms('111', s)
+    puts "SHOP: #{parse_sms('111', s)[:SHOP]}"
 
     s = <<-eos
 [Web발신]
@@ -50,7 +49,7 @@ eos
 소문난우동
 eos
 
-    puts parse_sms('111', s)
+    puts "SHOP: #{parse_sms('111', s)[:SHOP]}"
 
     s = <<-eos
 [Web발신]
@@ -60,7 +59,34 @@ eos
 누적 2,368,397원"
 eos
 
-    puts parse_sms('111', s)
+    puts "SHOP: #{parse_sms('111', s)[:SHOP]}"
+
+    s = <<-eos
+[체크.승인]
+22,000원
+씨티BC(1*9*)김*정님
+01/23 12:34
+매일식당
+eos
+
+    puts "SHOP: #{parse_sms('111', s)[:SHOP]}"
+
+    s = <<-eos
+[Web발신]
+[KB]04/08 21:27
+078501**554
+주식회사개성
+체크카드출금
+13,000
+eos
+
+    puts "SHOP: #{parse_sms('111', s)[:SHOP]}"
+
+    s = <<-eos
+[Web발신]
+하나(6*8*)김*호님 04/02 19:59 (주)보나 일시불/4,500원/누적-134,049원
+eos
+
+    puts "SHOP: #{parse_sms('111', s)[:SHOP]}"
   end
 end
-
