@@ -1,7 +1,8 @@
 PATH
   remote: .
   specs:
-    credit-card-sms-parser (0.0.1)
+    credit-card-sms-parser (0.0.2)
+      rltk
 
 GEM
   remote: http://gems.iwilab.com:2000/
