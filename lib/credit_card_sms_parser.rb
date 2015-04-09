@@ -12,10 +12,10 @@ class String
 end
 
 class KoreanCreditCardLexer < RLTK::Lexer
-  rule(/\[Web발신\]/) { |t| [:HEADER , t]}
-  rule(/\(Web발신\)/) { |t| [:HEADER , t]}
-  rule(/체크카드출금/) { |t| [:HEADER , t]}
-  rule(/[\p{Hangul}\*]{2,4}님/) { |t| [:USER_NAME , t]}
+  rule(/\[Web발신\]/) { |t| [:HEADER, t]}
+  rule(/\(Web발신\)/) { |t| [:HEADER, t]}
+  rule(/체크카드출금/) { |t| [:HEADER, t]}
+  rule(/[\p{Hangul}\*]{2,4}님/) { |t| [:USER_NAME, t]}
   rule(/누적[\s:\-]?[\d,\-]+원/) { |t| [:MONEY_TOTAL, t.to_num] }
   rule(/누적-[\d,\-]+원/) { |t| [:MONEY_TOTAL, t.to_num] }
   rule(/[\d,\-]+원/) { |t| [:MONEY, t.to_num] }
@@ -25,7 +25,8 @@ class KoreanCreditCardLexer < RLTK::Lexer
   rule(/\S+카드/) {|t| [:CARD, t]}
   rule(/\d\d\/\d\d/) {|t| [:DATE, t]}
   rule(/\d\d:\d\d/) {|t| [:TIME, t]}
-  rule(/일시불/) {:TYPE}
+  rule(/일시불/) { :TYPE }
+  rule(/주식회사\p{Hangul}+/) {|t| [:SHOP, t[4..-1]]}
   rule(/\p{Hangul}+/) {|t| [:SHOP, t.strip]}
   rule(/\//) {|t| [:SLASH, t]}
   rule(/[\p{L}\p{P}]+/) {|t| [:WORD, t]}
