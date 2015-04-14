@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |gem|
   gem.name          = 'credit-card-sms-parser'
-  gem.version       = '0.0.5'
+  gem.version       = '0.0.6'
   gem.licenses      = %w(MIT)
   gem.authors       = %w(Hanson Benjamin)
   gem.email         = %w(jehokim@live.com)
