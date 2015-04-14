@@ -31,3 +31,6 @@ tmp
 
 # Exclude CTags
 /tags
+
+vendor/
+pkg/
