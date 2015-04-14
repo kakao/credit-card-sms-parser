@@ -35,13 +35,24 @@ class KoreanCreditCardLexer < RLTK::Lexer
 end
 
 module CreditCardSmsParser
-  def parse_sms(phone_number, sms_message)
+  CARD_MAP = {
+    '15776200' => '현대카드',
+    '18001111' => '하나카드',
+    '16449999' => '국민카드',
+    '15884000' => '농협BC카드',
+  }
+
+  def parse_sms(sms_message, phone_number = nil)
     tokens = KoreanCreditCardLexer.lex(sms_message)
     h = tokens.inject({}) do |memo, t|
       memo[t.type] = t.value
       memo
     end
 
-    h.merge(card_name: phone_number)
+    if phone_number
+      h.merge(card_company_name: CARD_MAP[phone_number])
+    end
+
+    h
   end
 end
