@@ -3,7 +3,7 @@
 
 ## 사용방법
 ```
-gem install credit-card-sms-parser
+$ gem install credit-card-sms-parser
 $ pry
 [1] pry(main)> require 'credit_card_sms_parser'
 => true
