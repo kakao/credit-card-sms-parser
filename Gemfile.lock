@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    credit-card-sms-parser (0.0.6)
+    credit-card-sms-parser (0.1.0)
       rltk
 
 GEM
