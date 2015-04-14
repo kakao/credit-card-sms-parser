@@ -1,4 +1,6 @@
 # credit-card-sms-parser
+[![Gem Version](https://badge.fury.io/rb/credit-card-sms-parser.svg)](http://badge.fury.io/rb/credit-card-sms-parser)
+
 신용카드 회사에서 보내주는 sms 문자열을 읽어서 `가게명`, `사용금액`, `누적사용금액` 정보들을 추출해줍니다.
 
 ## 사용방법
