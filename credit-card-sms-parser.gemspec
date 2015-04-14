@@ -8,8 +8,8 @@ Gem::Specification.new do |gem|
   gem.licenses      = %w(MIT)
   gem.authors       = %w(Hanson Benjamin)
   gem.email         = %w(jehokim@live.com)
-  gem.description   = %q{credit-card-sms-parser}
-  gem.summary       = %q{It parses all Korean credit card messages.}
+  gem.description   = 'It parses out the SMS notifications for each credit (or debit) transaction, allowing you to collect the following information: transaction amount, name of credit card company, payee (store), total amount. For the time being, support is limited to Korean credit card companies only.'
+  gem.summary       = 'Parsing credit card SMS messages'
   gem.homepage      = 'https://github.com/kakao/credit-card-sms-parser'
   gem.metadata['allowed_push_host'] = 'https://rubygems.org'
 
