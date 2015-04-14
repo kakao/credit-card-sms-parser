@@ -1,4 +1,3 @@
-source 'http://gems.iwilab.com:2000/'
 source 'https://rubygems.org'
 
 # Specify your gem's dependencies in tms_client.gemspec
