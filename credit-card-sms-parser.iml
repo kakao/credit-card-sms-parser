@@ -12,28 +12,28 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$" />
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="RVM: ruby-2.2.2 [global]" jdkType="RUBY_SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="PROVIDED" name="activesupport (v4.2.1, RVM: ruby-2.2.1 [global] (1)) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="builder (v3.2.2, RVM: ruby-2.2.1 [global] (1)) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="bump (v0.5.1, RVM: ruby-2.2.1 [global] (1)) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="faraday (v0.9.1, RVM: ruby-2.2.1 [global] (1)) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="ffi (v1.9.8, RVM: ruby-2.2.1 [global] (1)) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="filigree (v0.3.2, RVM: ruby-2.2.1 [global] (1)) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="geminabox (v0.12.4, RVM: ruby-2.2.1 [global] (1)) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="httpclient (v2.6.0.1, RVM: ruby-2.2.1 [global] (1)) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="i18n (v0.7.0, RVM: ruby-2.2.1 [global] (1)) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="json (v1.8.2, RVM: ruby-2.2.1 [global] (1)) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="minitest (v5.5.1, RVM: ruby-2.2.1 [global] (1)) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="multipart-post (v2.0.0, RVM: ruby-2.2.1 [global] (1)) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="nesty (v1.0.2, RVM: ruby-2.2.1 [global] (1)) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rack (v1.6.0, RVM: ruby-2.2.1 [global] (1)) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rack-protection (v1.5.3, RVM: ruby-2.2.1 [global] (1)) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rake (v10.4.2, RVM: ruby-2.2.1 [global] (1)) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rltk (v3.0.0, RVM: ruby-2.2.1 [global] (1)) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="sinatra (v1.4.5, RVM: ruby-2.2.1 [global] (1)) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="thread_safe (v0.3.5, RVM: ruby-2.2.1 [global] (1)) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="tilt (v1.4.1, RVM: ruby-2.2.1 [global] (1)) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="tzinfo (v1.2.2, RVM: ruby-2.2.1 [global] (1)) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="activesupport (v4.2.1, RVM: ruby-2.2.2 [global]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="builder (v3.2.2, RVM: ruby-2.2.2 [global]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bump (v0.5.1, RVM: ruby-2.2.2 [global]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="faraday (v0.9.1, RVM: ruby-2.2.2 [global]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="ffi (v1.9.8, RVM: ruby-2.2.2 [global]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="filigree (v0.3.2, RVM: ruby-2.2.2 [global]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="geminabox (v0.12.4, RVM: ruby-2.2.2 [global]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="httpclient (v2.6.0.1, RVM: ruby-2.2.2 [global]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="i18n (v0.7.0, RVM: ruby-2.2.2 [global]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="json (v1.8.2, RVM: ruby-2.2.2 [global]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="minitest (v5.5.1, RVM: ruby-2.2.2 [global]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="multipart-post (v2.0.0, RVM: ruby-2.2.2 [global]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="nesty (v1.0.2, RVM: ruby-2.2.2 [global]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rack (v1.6.0, RVM: ruby-2.2.2 [global]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rack-protection (v1.5.3, RVM: ruby-2.2.2 [global]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rake (v10.4.2, RVM: ruby-2.2.2 [global]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rltk (v3.0.0, RVM: ruby-2.2.2 [global]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="sinatra (v1.4.5, RVM: ruby-2.2.2 [global]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="thread_safe (v0.3.5, RVM: ruby-2.2.2 [global]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="tilt (v1.4.1, RVM: ruby-2.2.2 [global]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="tzinfo (v1.2.2, RVM: ruby-2.2.2 [global]) [gem]" level="application" />
   </component>
 </module>
