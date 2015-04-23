@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in tms_client.gemspec
+# Specify your gem's dependencies in credit-card-sms-parser.gemspec
 gemspec
 
 gem 'bump'
