@@ -97,4 +97,16 @@ KEB하나 박솔*님 4*6*
     eos
     assert_equal('버거킹 판교유스페', parse_sms(s)[:SHOP])
   end
+
+  def test_상호명에_영어_포함
+    s = <<-eos
+[Web발신]
+[현대카드]-승인
+***님
+3,400원(일시불)
+SK플래닛판교마트
+누적:612,900원
+    eos
+    assert_equal('SK플래닛판교마트', parse_sms(s)[:SHOP])
+  end
 end

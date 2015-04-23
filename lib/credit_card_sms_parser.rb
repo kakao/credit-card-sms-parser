@@ -28,7 +28,7 @@ class KoreanCreditCardLexer < RLTK::Lexer
   rule(/일시불/) { :TYPE }
   rule(/주식회사\p{Hangul}+/) {|t| [:SHOP, t[4..-1]]}
   rule(/^\p{Hangul}+( +\p{Hangul}+)*$/) {|t| [:SHOP, t.strip]}
-  rule(/\p{Hangul}+/) {|t| [:SHOP, t.strip]}
+  rule(/[A-Za-z\p{Hangul}]+/) {|t| [:SHOP, t.strip]}
   rule(/\//) {|t| [:SLASH, t]}
   rule(/[\p{L}\p{P}]+/) {|t| [:WORD, t]}
   rule(/[\d\*]+/) { :NUMBER }
