@@ -109,4 +109,16 @@ SK플래닛판교마트
     eos
     assert_equal('SK플래닛판교마트', parse_sms(s)[:SHOP])
   end
+
+  def test_뒤에_사용_이라는_단어가_포함
+    s = <<-eos
+[Web발신]
+KB국민체크(6*3*)
+***님
+04/24 12:13
+20,000원
+효소원판교점 사용
+    eos
+    assert_equal('효소원판교점', parse_sms(s)[:SHOP])
+  end
 end
