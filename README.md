@@ -12,11 +12,17 @@ $ pry
 [2] pry(main)> include CreditCardSmsParser
 => Object
 [3] pry(main)> parse_sms('하나(6*8*)***님 04/06 15:26 씨유판교 일시불/3,500원/누적-4,645원')
-=> {:CARD=>"하나(6*8*)",
- :DATE=>"04/06",
- :TIME=>"15:26",
- :SHOP=>"씨유판교",
- :MONEY=>4645}
+=> {:card=>"하나(6*8*)",
+ :user_name=>"***님",
+ :space=>" ",
+ :date=>"04/06",
+ :time=>"15:26",
+ :shop_name=>"씨유판교",
+ :type=>nil,
+ :punctuation=>"/",
+ :money=>3500,
+ :money_total=>4645,
+ :EOS=>nil}
 ```
 
 ## 현재까지 지원하는(걸로 추정되는) 카드사
