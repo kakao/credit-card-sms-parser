@@ -18,7 +18,7 @@ class TestCreditCardSmsParser < Minitest::Test
 마노핀익스프레스신림
 누적:354,220원
     eos
-    assert_equal('마노핀익스프레스신림', parse_sms(s)[:SHOP])
+    assert_equal('마노핀익스프레스신림', parse_sms(s)[:shop_name])
   end
 
   def test_hana_card
@@ -26,7 +26,7 @@ class TestCreditCardSmsParser < Minitest::Test
 [Web발신]
 하나(6*8*)김*호님 04/06 15:26 씨유판교 일시불/3,500원/누적-4,645원
     eos
-    assert_equal('씨유판교', parse_sms(s)[:SHOP])
+    assert_equal('씨유판교', parse_sms(s)[:shop_name])
   end
 
   def test_kb_card
@@ -39,7 +39,7 @@ KB국민카드 2*5*
 미니스톱판교점
 누적 97,440원
     eos
-    assert_equal('미니스톱판교점', parse_sms(s)[:SHOP])
+    assert_equal('미니스톱판교점', parse_sms(s)[:shop_name])
 
     s = <<-eos
 [Web발신]
@@ -49,7 +49,7 @@ KB국민카드 2*5*
 체크카드출금
 13,000
     eos
-    assert_equal('개성', parse_sms(s)[:SHOP])
+    assert_equal('개성', parse_sms(s)[:shop_name])
   end
 
   def test_samsung_card
@@ -61,7 +61,7 @@ KB국민카드 2*5*
 일시불
 소문난우동
     eos
-    assert_equal('소문난우동', parse_sms(s)[:SHOP])
+    assert_equal('소문난우동', parse_sms(s)[:shop_name])
   end
 
   def test_keb_hana_card
@@ -72,7 +72,7 @@ KEB하나 박솔*님 4*6*
 (주)이니 03/23 09:58
 누적 2,368,397원
     eos
-    assert_equal('이니', parse_sms(s)[:SHOP])
+    assert_equal('이니', parse_sms(s)[:shop_name])
   end
 
   def test_city_bc_card
@@ -83,7 +83,7 @@ KEB하나 박솔*님 4*6*
 01/23 12:34
 매일식당
     eos
-    assert_equal('매일식당', parse_sms(s)[:SHOP])
+    assert_equal('매일식당', parse_sms(s)[:shop_name])
   end
 
   def test_상호명에_띄어쓰기_포함
@@ -95,7 +95,7 @@ KEB하나 박솔*님 4*6*
 누적금액679,780원.
 버거킹 판교유스페
     eos
-    assert_equal('버거킹 판교유스페', parse_sms(s)[:SHOP])
+    assert_equal('버거킹 판교유스페', parse_sms(s)[:shop_name])
   end
 
   def test_상호명에_영어_포함
@@ -107,7 +107,7 @@ KEB하나 박솔*님 4*6*
 SK플래닛판교마트
 누적:612,900원
     eos
-    assert_equal('SK플래닛판교마트', parse_sms(s)[:SHOP])
+    assert_equal('SK플래닛판교마트', parse_sms(s)[:shop_name])
   end
 
   def test_뒤에_사용_이라는_단어가_포함
@@ -119,7 +119,7 @@ KB국민체크(6*3*)
 20,000원
 효소원판교점 사용
     eos
-    assert_equal('효소원판교점', parse_sms(s)[:SHOP])
+    assert_equal('효소원판교점', parse_sms(s)[:shop_name])
   end
 
 
@@ -135,6 +135,15 @@ KB국민체크(6*3*)
 잔액
 4,968,160원
     eos
-    assert_equal('찌개애감동', parse_sms(s)[:SHOP])
+    assert_equal('찌개애감동', parse_sms(s)[:shop_name])
+  end
+
+  def test_keb_hana_card
+    s = <<-eos
+[Web발신]
+KEB하나  박우*님 7*5* 일시불     10,000원 롯데쇼핑( 04/18 18:49
+    eos
+
+    assert_equal('롯데쇼핑', parse_sms(s)[:shop_name])
   end
 end
