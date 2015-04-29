@@ -121,4 +121,20 @@ KB국민체크(6*3*)
     eos
     assert_equal('효소원판교점', parse_sms(s)[:SHOP])
   end
+
+
+  def test_잔액이_홀로_빠져나와_있는_메시지
+    s = <<-eos
+[Web발신]
+김*호님
+삼성법인6265
+04/22 19:56
+찌개애감동
+16,000원
+일시불
+잔액
+4,968,160원
+    eos
+    assert_equal('찌개애감동', parse_sms(s)[:SHOP])
+  end
 end
