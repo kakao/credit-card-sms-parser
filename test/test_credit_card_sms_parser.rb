@@ -146,4 +146,14 @@ KEB하나  박우*님 7*5* 일시불     10,000원 롯데쇼핑( 04/18 18:49
 
     assert_equal('롯데쇼핑', parse_sms(s)[:shop_name])
   end
+
+
+  def test_shinhan_card
+    s = <<-eos
+[Web발신]
+신한카드승인 강*혜(9*0*) 04/27 21:31 (일시불)39,500원 (주)페어몬트 누적688,800원
+    eos
+
+    assert_equal('페어몬트', parse_sms(s)[:shop_name])
+  end
 end
