@@ -19,7 +19,7 @@ class KoreanCreditCardLexer < RLTK::Lexer
   rule(/누적[\s:\-]?[\d,\-]+원/) { |t| [:money_total, t.to_num] }
   rule(/누적-[\d,\-]+원/) { |t| [:money_total, t.to_num] }
   rule(/[\d,\-]+원/) { |t| [:money, t.to_num] }
-  rule(/\(주\)\p{Hangul}+/) {|t| [:shop, t[3..-1]]}
+  rule(/\(주\)\p{Hangul}+/) {|t| [:shop_name, t[3..-1]]}
   rule(/\p{Hangul}+\([\d\*]{4}\)/) {|t| [:card, t]}
   rule(/\S+은행/) {|t| [:bank, t]}
   rule(/KEB하나/) {|t| [:bank, t]}
