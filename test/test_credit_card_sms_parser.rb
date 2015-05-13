@@ -137,7 +137,7 @@ KB국민체크(6*3*)
     assert_equal('찌개애감동', parse_sms(s)[:shop_name])
   end
 
-  def test_keb_hana_card
+  def test_keb_hana_card2
     s = <<-eos
 [Web발신]
 KEB하나  박우*님 7*5* 일시불     10,000원 롯데쇼핑( 04/18 18:49
@@ -151,5 +151,17 @@ KEB하나  박우*님 7*5* 일시불     10,000원 롯데쇼핑( 04/18 18:49
 신한카드승인 강*혜(9*0*) 04/27 21:31 (일시불)39,500원 (주)페어몬트 누적688,800원
     eos
     assert_equal('페어몬트', parse_sms(s)[:shop_name])
+  end
+
+  def test_kb
+    s = <<-eos
+[Web발신]
+KB국민체크(17)
+강*혜님
+04/30 22:34
+87,000원
+이꾸　정자점 사용
+    eos
+    assert_equal('이꾸 정자점', parse_sms(s)[:shop_name])
   end
 end
