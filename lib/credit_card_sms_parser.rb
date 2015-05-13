@@ -61,6 +61,8 @@ module CreditCardSmsParser
       h.merge(card_company_name: CARD_MAP[phone_number])
     end
 
-    h
+    h.reject {|key, _|
+      key == :header || key == :type || key == :punctuation || key == :space
+    }
   end
 end
