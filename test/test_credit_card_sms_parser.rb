@@ -176,4 +176,17 @@ KB국민체크(17)
 eos
     assert_equal('365PLUS정자', parse_sms(s)[:shop_name])
   end
+
+  def test_aa
+    s = <<-eos
+[Web발신]
+[KB]05/17 12:33
+435002**739
+대성할인마트
+체크카드출금
+4,350
+잔액3,172,018
+    eos
+    assert_equal('대성할인마트', parse_sms(s)[:shop_name])
+  end
 end
