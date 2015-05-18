@@ -18,6 +18,7 @@ class KoreanCreditCardLexer < RLTK::Lexer
   rule(/[\p{Hangul}\*]{2,4}님/) { |t| [:user_name, t]}
   rule(/누적[\s:\-]?[\d,\-]+원/) { |t| [:money_total, t.to_num] }
   rule(/누적-[\d,\-]+원/) { |t| [:money_total, t.to_num] }
+  rule(/잔액[\d,\-]+원?/) { |t| [:remain_total, t.to_num] }
   rule(/[\d,\-]+원?/) { |t| [:money, t.to_num] }
   rule(/\(주\)\p{Hangul}+/) {|t| [:shop_name, t[3..-1]]}
   rule(/\p{Hangul}+\([\d\*]{4}\)/) {|t| [:card, t]}
@@ -41,6 +42,7 @@ class KoreanCreditCardLexer < RLTK::Lexer
   rule(/\s/) {|t| [:space, t]}
 end
 
+require 'awesome_print'
 module CreditCardSmsParser
   CARD_MAP = {
     '15776200' => '현대카드',
@@ -63,7 +65,7 @@ module CreditCardSmsParser
     end
 
     h.reject {|key, _|
-      key == :header || key == :type || key == :punctuation || key == :space
+      key == :header || key == :type || key == :punctuation || key == :space || key == :EOS
     }
   end
 end

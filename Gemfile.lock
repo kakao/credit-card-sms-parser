@@ -13,6 +13,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    awesome_print (1.6.1)
     builder (3.2.2)
     bump (0.5.2)
     faraday (0.9.1)
@@ -52,6 +53,7 @@ PLATFORMS
 
 DEPENDENCIES
   activesupport
+  awesome_print
   bump
   bundler (~> 1.8)
   credit-card-sms-parser!
