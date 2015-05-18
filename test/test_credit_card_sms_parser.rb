@@ -164,4 +164,16 @@ KB국민체크(17)
     eos
     assert_equal('이꾸 정자점', parse_sms(s)[:shop_name])
   end
+
+  def test_숫자_포함
+    s = <<-eos
+[Web발신]
+[KB]05/08 21:44
+078501**554
+365PLUS정자
+체크카드출금
+2,400
+eos
+    assert_equal('365PLUS정자', parse_sms(s)[:shop_name])
+  end
 end

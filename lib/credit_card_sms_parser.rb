@@ -18,7 +18,7 @@ class KoreanCreditCardLexer < RLTK::Lexer
   rule(/[\p{Hangul}\*]{2,4}님/) { |t| [:user_name, t]}
   rule(/누적[\s:\-]?[\d,\-]+원/) { |t| [:money_total, t.to_num] }
   rule(/누적-[\d,\-]+원/) { |t| [:money_total, t.to_num] }
-  rule(/[\d,\-]+원/) { |t| [:money, t.to_num] }
+  rule(/[\d,\-]+원?/) { |t| [:money, t.to_num] }
   rule(/\(주\)\p{Hangul}+/) {|t| [:shop_name, t[3..-1]]}
   rule(/\p{Hangul}+\([\d\*]{4}\)/) {|t| [:card, t]}
   rule(/\S+은행/) {|t| [:bank, t]}
@@ -34,7 +34,7 @@ class KoreanCreditCardLexer < RLTK::Lexer
     t.chomp!(' 일시불')
     [:shop_name, t.strip]
   }
-  rule(/[A-Za-z\p{Hangul}]+/) {|t| [:shop_name, t.strip]}
+  rule(/[0-9A-Za-z\p{Hangul}]+/) {|t| [:shop_name, t.strip]}
   rule(/[\p{L}]+/) {|t| [:word, t]}
   rule(/[\p{P}]+/) {|t| [:punctuation, t]}
   rule(/[\d\*]+/) { :number }
@@ -48,6 +48,7 @@ module CreditCardSmsParser
     '16449999' => '국민카드',
     '15881788' => '국민체크카드',
     '15884000' => '농협BC카드',
+    '15661000' => '씨티카드',
   }
 
   def parse_sms(sms_message, phone_number = nil)
