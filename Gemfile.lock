@@ -7,7 +7,7 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (4.2.1)
+    activesupport (4.2.2)
       i18n (~> 0.7)
       json (~> 1.7, >= 1.7.7)
       minitest (~> 5.1)
@@ -19,7 +19,7 @@ GEM
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.8)
-    filigree (0.3.2)
+    filigree (0.3.3)
     geminabox (0.12.4)
       builder
       faraday
@@ -28,15 +28,15 @@ GEM
       sinatra (>= 1.2.7)
     httpclient (2.6.0.1)
     i18n (0.7.0)
-    json (1.8.2)
-    minitest (5.6.0)
+    json (1.8.3)
+    minitest (5.7.0)
     multipart-post (2.0.0)
     nesty (1.0.2)
-    rack (1.6.0)
+    rack (1.6.4)
     rack-protection (1.5.3)
       rack
     rake (10.4.2)
-    rltk (3.0.0)
+    rltk (3.0.1)
       ffi (>= 1.0.0)
       filigree (>= 0.2.0)
     sinatra (1.4.6)
