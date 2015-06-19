@@ -189,4 +189,17 @@ eos
     eos
     assert_equal('대성할인마트', parse_sms(s)[:shop_name])
   end
+
+  def test_취소_내역
+    s = <<-eos
+[Web발신]
+KB*카드
+김재호님
+05/29 20:52
+320,000원
+우리동물메디컬 취소
+누적 560,060원
+    eos
+    assert_equal('우리동물메디컬', parse_sms(s)[:shop_name])
+  end
 end

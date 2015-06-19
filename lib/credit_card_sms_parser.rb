@@ -33,6 +33,7 @@ class KoreanCreditCardLexer < RLTK::Lexer
   rule(/^\p{Hangul}+( +\p{Hangul}+)*?$/) { |t|
     t.chomp!(' 사용')
     t.chomp!(' 일시불')
+    t.chomp!(' 취소')
     [:shop_name, t.strip]
   }
   rule(/[0-9A-Za-z\p{Hangul}]+/) {|t| [:shop_name, t.strip]}
