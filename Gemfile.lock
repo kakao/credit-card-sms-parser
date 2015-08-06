@@ -61,6 +61,3 @@ DEPENDENCIES
   minitest
   rake
   rltk
-
-BUNDLED WITH
-   1.10.3
