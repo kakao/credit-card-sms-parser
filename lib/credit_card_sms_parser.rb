@@ -30,7 +30,8 @@ class KoreanCreditCardLexer < RLTK::Lexer
   rule(/일시불/) { :type }
   rule(/^잔액/) { :type }
   rule(/주식회사\p{Hangul}+/) {|t| [:shop_name, t[4..-1]]}
-  rule(/^\p{Hangul}+( +\p{Hangul}+)*?$/) { |t|
+  rule(/^[\p{Hangul},\u3000]+( +[\p{Hangul},\u3000]+)*?$/) { |t|
+    t.gsub!(/\u3000/,' ')
     t.chomp!(' 사용')
     t.chomp!(' 일시불')
     t.chomp!(' 취소')
