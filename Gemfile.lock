@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     credit-card-sms-parser (0.3.8)
-      rltk (>= 3.0.0)
+      rltk (~> 3.0, >= 3.0.0)
 
 GEM
   remote: https://rubygems.org/
