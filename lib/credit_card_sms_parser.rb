@@ -42,6 +42,7 @@ class KoreanCreditCardLexer < RLTK::Lexer
   rule(/[\p{P}]+/) {|t| [:punctuation, t]}
   rule(/[\d\*]+/) { :number }
   rule(/\s/) {|t| [:space, t]}
+  rule(/./) {|t| [:any, t]}
 end
 
 require 'awesome_print'

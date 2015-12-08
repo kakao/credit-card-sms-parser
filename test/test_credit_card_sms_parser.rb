@@ -202,4 +202,38 @@ KB*카드
     eos
     assert_equal('우리동물메디컬', parse_sms(s)[:shop_name])
   end
+
+  def test_구글_플레이_결제
+    s = <<-eos
+[Web발신]
+KB국민카드
+김*호님
+10/16 04:39
+475.54(US$)
+미국   GOOGLE * 승인
+    eos
+    parse_sms(s)[:shop_name]
+  end
+
+  def test_특수문자
+    s = <<-eos
+[Web발신]
+[SSG.COM 주문완료]
+▶상품명:코카콜라 1.8L*12...
+▶결제금액:28,680원
+    eos
+    parse_sms(s)[:shop_name]
+
+    s = <<-eos
+[Web발신]
+[현대카드]-승인
+김재*님
+699,200원(일시불)
+BSP대한항공(￦)
+누적:844,350원
+    eos
+
+    assert_equal('BSP대한항공', parse_sms(s)[:shop_name])
+  end
+
 end
