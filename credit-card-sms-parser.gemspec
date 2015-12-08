@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = 'credit-card-sms-parser'
-  spec.version       = '0.3.9'
+  spec.version       = '0.3.10'
   spec.authors       = %w(Hanson Benjamin)
   spec.email         = %w(jehokim@live.com)
   if spec.respond_to?(:metadata)
@@ -22,7 +22,7 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
 
-  spec.add_runtime_dependency 'rltk', '~> 3.0', '>= 3.0.0'
-  spec.add_development_dependency 'bundler', '~> 1.10'
+  spec.add_runtime_dependency 'rltk', '~> 3'
+  spec.add_development_dependency 'bundler', '~> 1'
   spec.add_development_dependency 'rake', '~> 10.0'
 end
